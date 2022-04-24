@@ -9,7 +9,7 @@ const PostLink = ({ post }) => {
     return (
         <>
             <button type="button" className="post-link" key={post.id} onClick={() => navigate(`/post-detail/${post.id}`)}
-            >{post.title}</button>
+            >{post.title} <div>User: {post.userId}</div></button>
         </>
     );
 }
