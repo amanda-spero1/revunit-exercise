@@ -1,0 +1,15 @@
+.all-posts {
+    border: green solid 4px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.post-link {
+    text-align: left;
+    border: red solid 1px;
+    display: block;
+    background-color: transparent;
+    font-size: 20px;
+    margin: 10px 0;
+    width: 100%;
+}
