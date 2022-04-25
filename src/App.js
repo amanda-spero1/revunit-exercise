@@ -30,6 +30,10 @@ function App() {
 
   }, []);
 
+  if (error) {
+    return <div>Error Please Try Again</div>
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
