@@ -27,6 +27,7 @@ const PostDetail = ({ post }) => {
         return <div key={i}>{comment.body}</div>
     })
     //title, body, and a list of related comments at the bottom
+
     return (
         <>
             <h3>{post.title}</h3>

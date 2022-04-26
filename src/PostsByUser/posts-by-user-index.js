@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PostLink from '../Posts/post-link';
+import './posts-by-user-styles.css';
 
 let axios = require("axios");
 
@@ -34,22 +35,28 @@ const PostsByUser = () => {
         getPosts();
     }
 
+    if (error) {
+        return <div className="supplementary-message">Error. Please try again.</div>
+    }
+
+    if (loading) {
+        return <div className="supplementary-message">Loading...</div>
+    }
+
     return (
-        <>
+        <div className="main-page">
             <h2>Get Posts By User</h2>
             <form>
-                <h3>Enter User Id</h3>
-                <input type="text" onChange={handleChange} />
-                <button type="submit" onClick={handleSubmit}>Get Posts</button>
+                <label className="user-id-label" for="user-id">Enter User Id</label>
+                <input type="text" id="user-id" onChange={handleChange} />
+                <button className="get-by-user-button" type="submit" onClick={handleSubmit}>Get Posts</button>
             </form>
             {posts.length > 0 &&
-                <div className="all-posts">
-                    {posts.map(post => {
-                        return <PostLink post={post} />
-                    })}
-                </div>
+                posts.map(post => {
+                    return <PostLink post={post} />
+                })
             }
-        </>
+        </div>
     )
 }
 

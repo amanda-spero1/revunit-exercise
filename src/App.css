@@ -1,8 +1,22 @@
-/* .App {
-  text-align: center;
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
-.App-logo {
+
+.App {
+  /* text-align: center; */
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+.supplementary-message {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*.App-logo {
   height: 40vmin;
   pointer-events: none;
 }

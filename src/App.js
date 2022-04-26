@@ -1,5 +1,5 @@
-import { useEffect, useState, useMemo } from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Posts from './Posts/posts-index';
 import PostDetail from './Posts/post-detail';
 import NavSidebar from './NavSidebar/nav-sidebar-index'
@@ -19,7 +19,6 @@ function App() {
       .then(response => {
         setError(false);
         setPosts(response.data)
-        // console.log(response.data);
         setLoading(false);
       })
       .catch(error => {
@@ -31,7 +30,11 @@ function App() {
   }, []);
 
   if (error) {
-    return <div>Error Please Try Again</div>
+    return <div className="supplementary-message">Error. Please try again.</div>
+  }
+
+  if (loading) {
+    return <div className="supplementary-message">Loading...</div>
   }
 
   return (
