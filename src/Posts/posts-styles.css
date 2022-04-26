@@ -8,8 +8,9 @@
 
 .post-link {
     text-align: left;
-    border: blue solid 2px;
+    border: black solid 1px;
     border-radius: 4px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
     display: block;
     background-color: transparent;
     font-size: 20px;
