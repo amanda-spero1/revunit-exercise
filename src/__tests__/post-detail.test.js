@@ -4,12 +4,12 @@ import { cleanup, render } from '@testing-library/react';
 import { StateMock } from '@react-mock/state';
 import PostDetail from '../Posts/post-detail';
 
-function renderComponent(state, props) {
+function renderComponent(props) {
     return render(
         <BrowserRouter>
-            <StateMock state={state}>
-                <PostDetail post={props.post} />
-            </StateMock>
+            {/* <StateMock state={state}> */}
+            <PostDetail post={props.post} />
+            {/* </StateMock> */}
         </BrowserRouter>
     )
 }
@@ -29,13 +29,7 @@ describe('Post Details Page', () => {
         }
     };
 
-    let state = {
-        comments: [
-            'comment 1',
-            'comment 2',
-            'comment 3'
-        ]
-    };
+
 
     describe('displays all posts', () => {
 
@@ -57,15 +51,5 @@ describe('Post Details Page', () => {
 
     });
 
-    describe('displays all comments', () => {
-
-        test('displays post comments', () => {
-            const { getByText } = renderComponent(state, props);
-
-            // const { getByText } = renderComponent(props);
-            expect(getByText('comment 1')).toBeInTheDocument();
-        });
-
-    });
 
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comments = ({ comment }) => {
+const Comment = ({ comment }) => {
 
     return (
         <div key={comment.id} className="comment-container">
@@ -20,4 +20,4 @@ const Comments = ({ comment }) => {
     )
 }
 
-export default Comments;
+export default Comment;

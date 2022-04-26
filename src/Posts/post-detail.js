@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Comments from './comments';
+import Comment from './comment';
 
 let axios = require("axios");
 
@@ -26,7 +26,7 @@ const PostDetail = ({ post }) => {
     //For each comment, show the body, name, and email address.
     let displayComments = comments.map(comment => {
         return (
-            <Comments comment={comment} />
+            <Comment comment={comment} />
         )
     });
 
