@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Comments from './comments';
 
 let axios = require("axios");
 
 const PostDetail = ({ post }) => {
-    console.log(post)
     const [comments, setComments] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -23,20 +23,23 @@ const PostDetail = ({ post }) => {
 
     }, []);
 
-    let displayComments = comments.map((comment, i) => {
-        return <div key={i}>{comment.body}</div>
-    })
-    //title, body, and a list of related comments at the bottom
+    //For each comment, show the body, name, and email address.
+    let displayComments = comments.map(comment => {
+        return (
+            <Comments comment={comment} />
+        )
+    });
 
+    //title, body, and a list of related comments at the bottom
+    //detail page that displays the title at the top of the screen as well as the body content of the post
     return (
-        <>
+        <div className="main-page">
             <h3>{post.title}</h3>
             <div>{post.body}</div>
-            <div>
-                Comments
+            <div className="comments-section">
                 {displayComments}
             </div>
-        </>
+        </div>
 
     );
 }

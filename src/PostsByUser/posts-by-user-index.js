@@ -46,7 +46,7 @@ const PostsByUser = () => {
     return (
         <div className="main-page">
             <h2>Get Posts By User</h2>
-            <form>
+            <form className="get-by-user-form">
                 <label className="user-id-label" for="user-id">Enter User Id</label>
                 <input type="text" id="user-id" onChange={handleChange} />
                 <button className="get-by-user-button" type="submit" onClick={handleSubmit}>Get Posts</button>
